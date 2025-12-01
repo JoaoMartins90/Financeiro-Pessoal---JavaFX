@@ -9,18 +9,20 @@
     <top>
         <ToolBar>
             <Button text="Voltar" onAction="#onBack"/>
+            <Button text="Editar" onAction="#onEdit"/>
+            <Button text="Excluir" onAction="#onDelete"/>
         </ToolBar>
     </top>
 
     <center>
-        <TableView fx:id="table" prefWidth="680" prefHeight="360">
+        <TableView fx:id="table" prefWidth="600">
 
             <columns>
-                <TableColumn text="Descrição" fx:id="colDescription" prefWidth="150"/>
-                <TableColumn text="Valor" fx:id="colAmount" prefWidth="100"/>
-                <TableColumn text="Tipo" fx:id="colType" prefWidth="80"/>
-                <TableColumn text="Categoria" fx:id="colCategory" prefWidth="120"/>
-                <TableColumn text="Data" fx:id="colDate" prefWidth="100"/>
+                <TableColumn text="Descrição" prefWidth="150" fx:id="colDesc"/>
+                <TableColumn text="Valor" prefWidth="80" fx:id="colAmount"/>
+                <TableColumn text="Tipo" prefWidth="80" fx:id="colType"/>
+                <TableColumn text="Categoria" prefWidth="100" fx:id="colCategory"/>
+                <TableColumn text="Data" prefWidth="100" fx:id="colDate"/>
             </columns>
 
         </TableView>

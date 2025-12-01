@@ -1,4 +1,4 @@
-package com.example.financeiro;
+package com.example.financeiro.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -22,8 +22,20 @@ public class TransactionController {
 
     @FXML
     public void initialize() {
+
         typeBox.getItems().addAll("Ganhos", "Gastos");
         datePicker.setValue(LocalDate.now());
+
+        // 👉 CARREGAR DADOS SE FOR EDIÇÃO
+        Transaction editing = TableController.getSelected();
+
+        if (editing != null) {
+            descriptionField.setText(editing.getDescription());
+            amountField.setText(String.valueOf(editing.getAmount()));
+            typeBox.setValue(editing.getType().equals("GANHOS") ? "Ganhos" : "Gastos");
+            categoryField.setText(editing.getCategory());
+            datePicker.setValue(editing.getDate());
+        }
     }
 
     @FXML
@@ -41,7 +53,14 @@ public class TransactionController {
             }
 
             Transaction t = new Transaction(desc, amount, type, category, date);
-            service.save(t);
+            Transaction old = TableController.getSelected();
+
+            if (old != null) {
+                service.update(old, t);
+                TableController.setSelected(null);
+            } else {
+                service.save(t);
+            }
 
             Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
             FXMLUtils.changeScene(stage, "/fxml/main.fxml");

@@ -24,6 +24,15 @@ public class TransactionService {
         dao.save(t);
     }
 
+    public void delete(Transaction t) {
+        dao.delete(t);
+    }
+
+    public void update(Transaction original, Transaction edited) {
+        dao.update(original, edited);
+    }
+
+
     public List<Transaction> all() {
         return dao.findAll();
     }
