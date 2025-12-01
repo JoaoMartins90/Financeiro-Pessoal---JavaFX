@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.financeiro.controller.TableController"
+            prefWidth="700" prefHeight="400">
+
+    <top>
+        <ToolBar>
+            <Button text="Voltar" onAction="#onBack"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <TableView fx:id="table" prefWidth="680" prefHeight="360">
+
+            <columns>
+                <TableColumn text="Descrição" fx:id="colDescription" prefWidth="150"/>
+                <TableColumn text="Valor" fx:id="colAmount" prefWidth="100"/>
+                <TableColumn text="Tipo" fx:id="colType" prefWidth="80"/>
+                <TableColumn text="Categoria" fx:id="colCategory" prefWidth="120"/>
+                <TableColumn text="Data" fx:id="colDate" prefWidth="100"/>
+            </columns>
+
+        </TableView>
+    </center>
+
+</BorderPane>

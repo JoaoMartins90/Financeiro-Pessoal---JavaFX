@@ -89,4 +89,11 @@ public class MainController {
         // volta a mostrar tudo
         refresh();
     }
+
+    @FXML
+    public void openTransactions() {
+        Stage stage = (Stage) balanceLabel.getScene().getWindow();
+        FXMLUtils.changeScene(stage, "/fxml/transactions_table.fxml");
+    }
+
 }
