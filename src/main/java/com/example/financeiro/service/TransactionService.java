@@ -43,12 +43,6 @@ public class TransactionService {
                 .sum();
     }
 
-    public double totalByMonth(YearMonth ym) {
-        return all().stream()
-                .filter(t -> YearMonth.from(t.getDate()).equals(ym))
-                .mapToDouble(t -> "GANHOS".equals(t.getType()) ? t.getAmount() : -t.getAmount())
-                .sum();
-    }
 
     public Map<String, Double> totalByCategory() {
         return all().stream()
