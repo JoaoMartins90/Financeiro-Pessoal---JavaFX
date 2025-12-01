@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.financeiro.controller.MainController" prefWidth="600" prefHeight="400">
+
     <top>
         <ToolBar>
             <Button text="Nova Transação" onAction="#openForm"/>
@@ -10,8 +11,19 @@
     </top>
     <center>
         <VBox alignment="CENTER" spacing="12" prefWidth="580" prefHeight="360">
+
+            <!-- Filtros -->
+            <HBox spacing="10" alignment="CENTER">
+                <DatePicker fx:id="startDate" promptText="Data inicial"/>
+                <DatePicker fx:id="endDate" promptText="Data final"/>
+                <Button text="Filtrar" onAction="#onFilter"/>
+                <Button text="Limpar" onAction="#onClearFilter"/>
+            </HBox>
+
+
             <Label fx:id="balanceLabel" text="Saldo: R$ 0,00" style="-fx-font-size:18px;"/>
             <PieChart fx:id="categoryChart" prefWidth="500" prefHeight="300"/>
+
         </VBox>
     </center>
 </BorderPane>
