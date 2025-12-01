@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.financeiro.controller.LoginController" prefWidth="320" prefHeight="200">
+    <children>
+        <Label text="Controle Financeiro Pessoal" layoutX="60" layoutY="30" style="-fx-font-size:20px;"/>
+        <Button text="Entrar" layoutX="120" layoutY="100" onAction="#onLogin" prefWidth="80"/>
+    </children>
+</AnchorPane>

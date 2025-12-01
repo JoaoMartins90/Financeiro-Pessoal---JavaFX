@@ -1,0 +1,8 @@
+/.gradle
+/build
+/.idea
+*.iml
+*.class
+/.vscode
+/.DS_Store
+transactions.json

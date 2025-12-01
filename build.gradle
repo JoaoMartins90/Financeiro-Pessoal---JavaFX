@@ -1,0 +1,41 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def javafxVersion = "21.0.3"
+
+    // JavaFX
+    implementation "org.openjfx:javafx-base:$javafxVersion:win"
+    implementation "org.openjfx:javafx-controls:$javafxVersion:win"
+    implementation "org.openjfx:javafx-fxml:$javafxVersion:win"
+    implementation "org.openjfx:javafx-graphics:$javafxVersion:win"
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // JUnit 5 para testes
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+application {
+    mainClass = 'com.example.financeiro.MainApp'
+}
+
+tasks.withType(JavaExec) {
+    // Necessário para rodar JavaFX
+    jvmArgs = [
+            '--module-path', configurations.runtimeClasspath.asPath,
+            '--add-modules', 'javafx.controls,javafx.fxml'
+    ]
+}
+
+// IMPORTANTE: habilita JUnit 5
+test {
+    useJUnitPlatform()
+}
