@@ -31,7 +31,7 @@ public class TransactionController {
         try {
             String desc = descriptionField.getText();
             double amount = Double.parseDouble(amountField.getText());
-            String type = typeBox.getValue();
+            String type = typeBox.getValue().equals("Ganhos") ? "GANHOS" : "GASTOS";
             String category = categoryField.getText();
             LocalDate date = datePicker.getValue();
 
